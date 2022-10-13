@@ -2,6 +2,7 @@ require "sinatra"
 require "sinatra/reloader" if development?
 require "pry-byebug"
 require "better_errors"
+require_relative "lib/cookbook"
 
 configure :development do
   use BetterErrors::Middleware
@@ -9,9 +10,14 @@ configure :development do
 end
 
 get "/" do
-  @usernames = ["Sola", "Fisola", "KKunle"]
+  cookbook = Cookbook.new("recipe.csv")
+  @view = cookbook.all
   erb :index
 end
+get "/new" do
+  erb :new
+end
+
 
 get "/about" do
   slim :about
