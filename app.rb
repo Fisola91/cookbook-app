@@ -9,5 +9,16 @@ configure :development do
 end
 
 get "/" do
-  "This is my first Hello world!"
+  @usernames = ["Sola", "Fisola", "KKunle"]
+  erb :index
+end
+
+get "/about" do
+  slim :about
+end
+
+get "/team/:username" do
+  # binding.pry
+  puts params[:username]
+  "The username is #{params[:username]}"
 end
