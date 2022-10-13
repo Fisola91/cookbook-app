@@ -25,6 +25,13 @@ post "/recipes" do
   redirect to("/")
 end
 
+get "/recipes/:index" do
+  cookbook = Cookbook.new(File.join(__dir__, "recipes.csv"))
+  recipe = cookbook.find(params[:index].to_i)
+  cookbook.delete(recipe)
+  redirect to("/")
+end
+
 
 # get "/team/:username" do
 #   # binding.pry

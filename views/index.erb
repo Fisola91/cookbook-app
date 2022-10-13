@@ -1,10 +1,12 @@
 <h2>Recipes</h2>
 <ul>
-  <% @recipes.each do |recipe| %>
+  <% @recipes.each_with_index do |recipe, index| %>
     <li>
+        <%# <%= index %>
         <%= recipe.name %>
-        =>
+        -
         <%= recipe.description %>
+        <a href = "/recipes/<%= index %>"> destroy</a>
     </li>
   <% end %>
 </ul>
