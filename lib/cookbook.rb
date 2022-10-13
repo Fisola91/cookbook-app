@@ -39,7 +39,7 @@ class Cookbook
   def load_csv
     CSV.foreach(@csv_file, headers: :first_row, header_converters: :symbol) do |row|
       # It has heading so need for name: rrow[:name]
-      @recipes << Recipe.new(row)
+      @recipes << Recipe.new(row[0], row[1])
     end
   end
 
@@ -47,7 +47,7 @@ class Cookbook
     CSV.open(@csv_file, "wb") do |csv|
       csv << ["name", "description"]
       @recipes.each do |recipe|
-        csv << [recipe.name, recipe.description, recipe.done?]
+        csv << [recipe.name, recipe.description]
       end
     end
   end
