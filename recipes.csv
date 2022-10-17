@@ -1,4 +1,4 @@
-name,description
-Tomato,Delicious
-strawberry,Sweet berry
-Potato,Sweet potato
+id,name,description
+4,Fisola,Sweet berry,false
+2,strawberry,Sweet potato,false
+3,Adesuyi Fisola,Sweet berry,false

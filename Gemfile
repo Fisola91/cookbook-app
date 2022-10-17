@@ -1,13 +1,16 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-gem "rspec"
-gem "better_errors"
-gem "binding_of_caller"
-gem "pry-byebug"
 gem "sinatra"
-gem "sinatra-contrib"
-gem "thin"
-gem "slim"
+gem "pry"
+gem 'rake'
+gem 'sqlite3', '~> 1.3.6'
+gem 'tux'
+gem 'shotgun'
+gem 'activerecord', '~> 4.2', '>= 4.2.11', :require => 'active_record'
+gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem "require_all"
+# gem 'sinatra-activerecord'
+gem 'bigdecimal', '1.3.5'
 
 # gem "rails"
