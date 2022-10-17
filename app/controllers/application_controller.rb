@@ -1,6 +1,6 @@
 require './config/environment'
-# require "sinatra/base"
-# require "sinatra/reloader"
+require "sinatra/base"
+require "sinatra/reloader"
 
 class ApplicationController < Sinatra::Base
   configure :development do
@@ -24,26 +24,20 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/recipes" do
-    cookbook = Cookbook.new(File.join(__dir__, "recipes.csv"))
-    recipe = Recipe.new(id: params[:id], name: params[:name], description: params[:description])
-    recipes = cookbook.add_recipe(@recipe)
-    binding.pry
-    # recipe = cookbook.find_by_name(params[:name])
-    redirect to("recipes/#{recipe}")
+    recipe = Recipe.new(name: params[:name], description: params[:description])
+    recipe.save
+    redirect ("recipes/#{recipe.id}")
   end
 
-
   get "recipes/:id" do
-    cookbook = Cookbook.new(File.join(__dir__, "recipes.csv"))
-    @recipe = cookbook.find(params[:id].to_i)
+    @recipe = Recipe.find_by(id: params[:id])
     erb :show
   end
 
-  get "/recipes/:index" do
-    cookbook = Cookbook.new(File.join(__dir__, "recipes.csv"))
-    recipe = cookbook.find(params[:i].to_i)
-    cookbook.delete(recipe)
-    redirect to("/")
+  delete "/recipes/:id" do
+    recipe = Recipe.find(params[:id])
+    recipe.destroy
+    redirect "/"
   end
 
   # get
