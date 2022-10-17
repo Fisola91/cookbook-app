@@ -2,7 +2,6 @@
 <ul>
   <% @recipes.each_with_index do |recipe, index| %>
     <li>
-        <%= recipe.done? ? "[X]" : "[ ]"%>
         <%= recipe.name %>
         -
         <%= recipe.description %>

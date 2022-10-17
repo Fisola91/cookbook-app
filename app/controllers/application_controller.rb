@@ -1,10 +1,6 @@
+require './config/environment'
 # require "sinatra/base"
-# require "sinatra/reloader" if development?
-# require "pry-byebug"
-# require 'sinatra/contrib'
-# require "better_errors"
-# require "sinatra/activerecord"
-# require_relative "./controllers/app/cookbook"
+# require "sinatra/reloader"
 
 class ApplicationController < Sinatra::Base
   configure :development do
@@ -12,17 +8,18 @@ class ApplicationController < Sinatra::Base
     # BetterErrors.application_root = File.expand_path(__dir__)
     set :public_folder, 'public'
     set :views, 'app/views'
+    register Sinatra::Reloader
   end
   # before do
 
   # end
 
   get "/" do
-    cookbook = Cookbook.new(File.join(__dir__, "recipes.csv"))
-    @recipes = cookbook.all
+    @recipes = Recipe.all
     erb :index
   end
   get "/new" do
+    recipe = Recipe.new
     erb :new
   end
 
