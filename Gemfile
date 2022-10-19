@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
+
 gem "sinatra"
 gem "pry"
 gem 'rake'
@@ -16,3 +17,8 @@ gem "require_all"
 gem 'bigdecimal'
 gem "sinatra-contrib"
 gem 'puma'
+group :test do
+  gem 'shoulda-matchers'
+  gem 'capybara', '>= 3.26'
+  gem "rspec"
+end
