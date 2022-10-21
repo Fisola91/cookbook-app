@@ -1,15 +1,16 @@
 
 <h3> Edit Recipe</h3>
 
-<form action="/recipes" method="post">
+<form action="/recipes/<%= @recipe.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
   <div>
     <label for="name">Name</label><br>
-    <input type="text" id="name" name="name">
+    <input type="text" id="name" name="name" value="<%= @recipe.name %>">
   </div>
 
   <div>
     <label for="description">Description</label><br>
-    <textarea id="description" name="description"></textarea>
+    <textarea id="description" name="description"><%= @recipe.description %></textarea>
   </div>
-  <input type="submit" value="Add to cookbook">
+  <input type="submit" value="Update recipe">
 </form>

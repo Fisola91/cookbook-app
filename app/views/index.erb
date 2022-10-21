@@ -2,10 +2,11 @@
 <ul>
   <% @recipes.each_with_index do |recipe, index| %>
     <li>
+        <%= index %>
         <%= recipe.name %>
         -
         <%= recipe.description %>
-        <a href = "/recipes/<%= index %>"> delete</a>
+        <a href = "/recipes/<%= recipe.id %>"> Delete</a>
     </li>
   <% end %>
 </ul>
