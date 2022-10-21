@@ -22,11 +22,16 @@ class RecipesController < ApplicationController
     erb :show
   end
 
-  delete "/recipes/:id" do
-    recipe = Recipe.find(params[:id])
-    recipe.destroy
-    redirect "/"
+  get "/recipes/:id/edit" do
+    @recipe = Recipe.find_by(id: params[:id])
+    erb :edit
   end
+
+  # delete "/recipes/:id" do
+  #   @recipe = Recipe.find_by(id: params[:id])
+  #   @recipe.destroy
+  #   redirect "/"
+  # end
 
   # get
 

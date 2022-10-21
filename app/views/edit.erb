@@ -1,16 +1,15 @@
-<h2>Recipes</h2>
-<ul>
-  <% @recipes.each_with_index do |recipe, index| %>
-    <li>
-        <%= index %>
-        <%= recipe.done? ? "[X]" : "[ ]"%>
-        <%= recipe.name %>
-        -
-        <%= recipe.description %>
-        <a href = "/recipes/done/<%= index %>"> done</a>
-        <a href = "/recipes/<%= index %>"> delete</a>
-    </li>
-  <% end %>
-</ul>
-<a href = "/new"> create a new recipe</a>
-<%# <%= link_to "create a new recipe", new_recipe %>
+
+<h3> Edit Recipe</h3>
+
+<form action="/recipes" method="post">
+  <div>
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name">
+  </div>
+
+  <div>
+    <label for="description">Description</label><br>
+    <textarea id="description" name="description"></textarea>
+  </div>
+  <input type="submit" value="Add to cookbook">
+</form>
