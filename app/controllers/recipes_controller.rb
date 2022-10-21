@@ -31,12 +31,11 @@ class RecipesController < ApplicationController
     redirect ("/recipes/#{@recipe.id}")
   end
 
-  # delete "/recipes/:id" do
-  #   @recipe = Recipe.find_by(id: params[:id])
-  #   @recipe.destroy
-  #   binding.pry
-  #   redirect "/"
-  # end
+  delete "/recipes/:id" do
+    @recipe = Recipe.find_by(id: params[:id])
+    @recipe.destroy
+    redirect "/"
+  end
 
   # get
 
