@@ -17,6 +17,7 @@ gem "require_all"
 gem 'bigdecimal'
 gem "sinatra-contrib"
 gem 'puma'
+gem "rack-test"
 group :test do
   gem 'shoulda-matchers'
   gem 'capybara', '>= 3.26'

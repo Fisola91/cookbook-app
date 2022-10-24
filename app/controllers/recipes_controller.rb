@@ -30,7 +30,6 @@ class RecipesController < ApplicationController
   patch "/recipes/:id" do
     @recipe = Recipe.find_by(id: params[:id])
     @recipe.update!(name: params[:name], description: params[:description], completed: params[:completed])
-    binding.pry
     redirect ("/recipes/#{@recipe.id}")
   end
 

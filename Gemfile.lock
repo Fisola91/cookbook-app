@@ -122,6 +122,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   pry
   puma
+  rack-test
   rake
   require_all
   rspec
