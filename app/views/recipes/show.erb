@@ -1,0 +1,21 @@
+
+<h2>Name: <%= @recipe.name %></h2>
+
+
+<p>Description: <%= @recipe.description %></p>
+
+
+  <% if @recipe.completed %>
+    <i class="fa fa-check-square-o"></i> This recipe is completed
+  <% else %>
+     <i class="fa fa-square-o"></i> This recipe is not completed
+  <% end %>
+<br>
+<a href = "/recipes/<%= @recipe.id%>/edit"> Edit recipe </a>
+
+<form action="/recipes/<%= @recipe.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>
+<br>
+<a href = "/"> Back to list </a>

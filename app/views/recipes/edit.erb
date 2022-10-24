@@ -12,5 +12,11 @@
     <label for="description">Description</label><br>
     <textarea id="description" name="description"><%= @recipe.description %></textarea>
   </div>
-  <input type="submit" value="Update recipe">
+
+  <% unless @recipe.new_record? %>
+      <div>
+        <input type="checkbox" name="completed" value="<%= @recipe.completed %>">completed
+      </div>
+    <% end %>
+  <input type="submit" value="Update Recipe">
 </form>

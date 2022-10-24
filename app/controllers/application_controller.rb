@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
     # use BetterErrors::Middleware
     # BetterErrors.application_root = File.expand_path(__dir__)
     set :public_folder, 'public'
-    set :views, 'app/views'
+    set :views, 'app/views/recipes'
     register Sinatra::Reloader
   end
 
