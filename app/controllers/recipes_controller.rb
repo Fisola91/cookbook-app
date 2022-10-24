@@ -6,13 +6,13 @@ class RecipesController < ApplicationController
   end
 
   get "/new" do
+    @recipe = Recipe.new
     erb :new
   end
 
   post "/recipes" do
-    @recipe = Recipe.new(name: params[:name], description: params[:description])
-    @recipe.save
-    binding.pry
+    @recipe = Recipe.new(name: params[:name], description: params[:description], completed: params[:completed])
+    @recipe.save!
     redirect ("/recipes/#{@recipe.id}")
   end
 
@@ -29,7 +29,8 @@ class RecipesController < ApplicationController
 
   patch "/recipes/:id" do
     @recipe = Recipe.find_by(id: params[:id])
-    @recipe.update(name: params[:name], description: params[:description])
+    @recipe.update!(name: params[:name], description: params[:description], completed: params[:completed])
+    binding.pry
     redirect ("/recipes/#{@recipe.id}")
   end
 

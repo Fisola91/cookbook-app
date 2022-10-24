@@ -13,10 +13,7 @@
     <textarea id="description" name="description"><%= @recipe.description %></textarea>
   </div>
 
-  <% unless @recipe.new_record? %>
-      <div>
-        <input type="checkbox" name="completed" value="<%= @recipe.completed %>">completed
-      </div>
-    <% end %>
+
+  <input id="completed" type="checkbox" name="completed" value="1" <%= 'checked="checked"' if @recipe.completed? %>>
   <input type="submit" value="Update Recipe">
 </form>

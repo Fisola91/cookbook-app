@@ -1,10 +1,10 @@
-# require "spec_helper"
-# RSpec.describe RecipesController, type: :controller do
-#   describe "GET index" do
-#     it "displays all recipes" do
-#       recipe = Recipe.create
-#       get "/"
-#       expect(assigns(:recipes)).to eq([recipe])
-#     end
-#   end
-# end
+require "spec_helper"
+
+RSpec.describe RecipesController, type: :controller do
+  describe "GET #index" do
+    it "returns a 209 custom status code" do
+      get "/"
+      expect(response).to have_http_status(200)
+    end
+  end
+end

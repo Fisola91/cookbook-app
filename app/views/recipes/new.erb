@@ -10,5 +10,8 @@
     <label for="description">Description</label><br>
     <textarea id="description" name="description"></textarea>
   </div>
+  <% if @recipe.completed %>
+    <input type="checkbox" id="completed" name="completed" value ="nil">
+  <% end %>
   <input type="submit" value="Add to cookbook">
 </form>
