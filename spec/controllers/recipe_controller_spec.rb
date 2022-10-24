@@ -1,12 +1,17 @@
-# require "spec_helper"
+require "spec_helper"
 
-# RSpec.describe RecipesController, type: :controller do
-#   let(:recipes) { RecipesController.new(name: params[:name],
-#      description: params[:description]), completed: params[:completed] }
-#   describe "GET #index" do
-#     it "returns a 200 custom status code" do
-#       get "/"
-#       expect(recipes).to eq(Recipe.all)
-#     end
-#   end
-# end
+RSpec.describe RecipesController, type: :controller do
+  context "GET #index" do
+    it "returns a success response" do
+     get "/"
+      expect(last_response.status).to eq(200)
+    end
+  end
+
+  # context "all recipes" do
+  #   let(:response) { get "/" }
+  #   it "displays all recipes" do
+  #     expect(response.body).to eq(Recipe.all)
+  #   end
+  # end
+end

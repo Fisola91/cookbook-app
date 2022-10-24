@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
 
   get "/" do
     @recipes = Recipe.all
+    # binding.pry
     erb :index
   end
 
@@ -17,7 +18,6 @@ class RecipesController < ApplicationController
   end
 
   get "/recipes/:id" do
-
     @recipe = Recipe.find_by(id: params[:id])
     erb :show
   end

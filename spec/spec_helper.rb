@@ -1,6 +1,6 @@
-# ENV['APP_ENV'] = 'test'
+ENV['APP_ENV'] = 'test'
 require 'rspec'
-# require 'rack/test'
+require 'rack/test'
 require 'shoulda/matchers'
 ENV['RACK_ENV'] ||= 'test'
 require_relative '../config/environment'
@@ -8,12 +8,12 @@ require_relative '../config/environment'
 RSpec.configure do |config|
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
-  # config.include Rack::Test::Methods
+  config.include Rack::Test::Methods
 end
 
-# def app
-#   Sinatra::Application
-# end
+def app
+  Sinatra::Application
+end
 
 # RSpec.configure do |conf|
 #   conf.include Rack::Test::Methods
