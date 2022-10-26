@@ -18,8 +18,10 @@ gem 'bigdecimal'
 gem "sinatra-contrib"
 gem 'puma'
 gem "rack-test"
+gem "faker"
 group :test do
   gem 'shoulda-matchers'
   gem 'capybara', '>= 3.26'
   gem "rspec"
+  gem "factory_bot"
 end

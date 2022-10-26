@@ -11,4 +11,9 @@ class ApplicationController < Sinatra::Base
 
   set :public_folder, 'public'
   set :views, 'app/views/recipes'
+
+    register Sinatra::Reloader
+  end
+  set :public_folder, 'public'
+  set :views, 'app/views/recipes'
 end

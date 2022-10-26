@@ -2,8 +2,9 @@ ENV['APP_ENV'] = 'test'
 require 'rspec'
 require 'rack/test'
 require 'shoulda/matchers'
-ENV['RACK_ENV'] ||= 'test'
+# ENV['RACK_ENV'] ||= 'test'
 require_relative '../config/environment'
+require "support/factory_bot"
 # Prevent database truncation if the environment is production
 RSpec.configure do |config|
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
