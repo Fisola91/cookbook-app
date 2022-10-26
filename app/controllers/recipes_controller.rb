@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-
   get "/" do
     @recipes = Recipe.all
     # binding.pry

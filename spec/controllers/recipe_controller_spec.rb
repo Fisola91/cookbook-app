@@ -4,6 +4,8 @@ RSpec.describe RecipesController, type: :controller do
   def app
     RecipesController
   end
+
+  context "GET #index" do
   describe "GET #index" do
     it "returns a success response" do
       get "/"
