@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe Recipe, type: :model do
+RSpec.xdescribe Recipe, type: :model do
   context "validation test" do
     let(:recipe) { build(:random_recipe)}
     it "should save successfully" do
