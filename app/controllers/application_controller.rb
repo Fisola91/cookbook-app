@@ -4,8 +4,6 @@ require "sinatra/reloader"
 
 class ApplicationController < Sinatra::Base
   configure :development do
-    # use BetterErrors::Middleware
-    # BetterErrors.application_root = File.expand_path(__dir__)
     register Sinatra::Reloader
   end
 

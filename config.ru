@@ -7,6 +7,7 @@ end
 use Rack::MethodOverride
 use RecipesController
 
+
 # use OtherController
 run ApplicationController
 

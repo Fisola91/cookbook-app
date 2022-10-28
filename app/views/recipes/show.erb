@@ -5,7 +5,7 @@
 <p>Description: <%= @recipe.description %></p>
 
 
-  <% if @recipe.completed %>
+  <% if @recipe.completed? %>
     <i class="fa fa-check-square-o"></i> This recipe is completed
   <% else %>
      <i class="fa fa-square-o"></i> This recipe is not completed
@@ -18,4 +18,4 @@
   <input type="submit" value="Delete">
 </form>
 <br>
-<a href = "/"> Back to list </a>
+<a href = "/"> Back to recipes </a>

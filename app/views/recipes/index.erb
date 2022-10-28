@@ -9,6 +9,7 @@
       <% end %>
 
       <a href = "/recipes/<%= recipe.id %>"><%= recipe.name %></a>
+
       <form action="/recipes/<%= recipe.id %>" method="post">
         <input type="hidden" name="_method" value="delete">
         <input type="submit" value="Delete">
@@ -17,4 +18,3 @@
   <% end %>
 </ul>
 <a href = "/new"> Add a new recipe</a>
-<%# <%= link_to "create a new recipe", new_recipe %>

@@ -24,7 +24,6 @@ RSpec.xdescribe Recipe, type: :model do
 
   end
 
-
   # it "is boolean" do
   #   expect(subject).to validate_inclusion_of(:completed).in_array([true, false, nil])
   # end
